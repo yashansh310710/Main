@@ -30,7 +30,7 @@ const observer = new IntersectionObserver(entries => {
             entry.target.classList.add('visible');
         }
     });
-, { threshold: 0.1 });
+}, { threshold: 0.1 });  // Correctly place the closing of the observer function
 
 websiteItems.forEach(item => {
     observer.observe(item);
