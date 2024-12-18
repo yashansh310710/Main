@@ -49,59 +49,62 @@ p {
 main {
     padding: 50px 10px;
     display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
 }
 
 .website-links {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
+    gap: 30px;
 }
 
 .website-item {
-    opacity: 0; /* Initially hidden */
-    transform: translateY(50px); /* Start from below */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
-    transition: all 0.5s ease-in-out;
+    width: 100%;
+}
+
+.website-link {
+    display: block;
+    text-decoration: none;
+    color: #333;
+}
+
+.website-image-container {
+    width: 100%;
+    height: 400px; /* Set a fixed height */
+    overflow: hidden;
+    position: relative;
+}
+
+.website-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Make image cover full width and height */
+    transition: transform 0.3s ease;
 }
 
 .website-item h3 {
     font-size: 1.5em;
-    margin-bottom: 15px;
+    margin-top: 15px;
     color: #333;
 }
 
-.website-link {
-    display: inline-block;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+hr {
+    margin-top: 10px;
+    border: 1px solid #333;
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: 20px;
 }
 
-.website-image {
-    width: 300px;
-    height: 200px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-    border-radius: 10px;
-}
-
-.website-link:hover .website-image {
-    transform: scale(1.1);
-}
-
-/* Hover effect for buttons */
-a:hover {
-    text-decoration: underline;
-    color: #000;
+.website-content {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 1.2em;
 }
 
 /* Back-to-top button */
@@ -123,17 +126,6 @@ a:hover {
     background-color: #555;
 }
 
-/* Social Media Icons */
-.social-icons {
-    margin-top: 20px;
-}
-
-.social-icons a {
-    margin: 0 10px;
-    color: #333;
-    text-decoration: none;
-}
-
 footer {
     text-align: center;
     background-color: #333;
@@ -146,7 +138,11 @@ footer {
 
 @media screen and (max-width: 768px) {
     .website-item {
-        width: 80%;
+        width: 90%;
+    }
+
+    .website-image {
+        width: 100%;
     }
 }
 
@@ -160,19 +156,12 @@ footer {
     }
 }
 
-/* Scroll animation for the website items */
-@keyframes fadeInBottom {
-    0% {
-        opacity: 0;
-        transform: translateY(50px);
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 2em;
     }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
-/* Trigger animation when visible */
-.visible {
-    animation: fadeInBottom 1s forwards;
+    p {
+        font-size: 1em;
+    }
 }
