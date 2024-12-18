@@ -35,3 +35,9 @@ const observer = new IntersectionObserver(entries => {
 websiteItems.forEach(item => {
     observer.observe(item);
 });
+
+}, { threshold: 0.1 });
+
+websiteItems.forEach(item => {
+    observer.observe(item);
+});
